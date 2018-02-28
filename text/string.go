@@ -15,6 +15,7 @@ func (t *String)IsEmpty() bool {
 	return t.text == "" && len(t.text) == 0
 }
 
+
 func (t *String)HasPostfix(suffix string)  bool {
 	return strings.HasSuffix(t.text, suffix)
 }

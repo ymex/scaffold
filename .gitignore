@@ -1,8 +1,44 @@
-# Binaries for programs and plugins
-*.exe
-*.dll
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
 *.so
+*.dll
 *.dylib
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+
+*.exe~
+*.test
+*.prof
+
+.idea
+*.tmp
+
+*.iml
+
+.idea/modules.xml
+.idea
+.idea/
+
+*.rdb
+node_modules/
+
 
 # Test binary, build with `go test -c`
 *.test
@@ -12,3 +48,4 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
