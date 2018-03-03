@@ -14,3 +14,7 @@ func TestIsEmail(t *testing.T) {
 	fmt.Println(IsEmail("ymex.cn@gmail.com"))
 	fmt.Println(IsEmail("ymex.mail.com"))
 }
+
+func TestIsASCII(t *testing.T) {
+	fmt.Println(IsASCII(""))
+}
