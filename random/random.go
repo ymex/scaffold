@@ -13,6 +13,7 @@ import (
 var (
 	dash byte = '-'
 	defalpha = []byte(`ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz`)
+	Digits = []byte(`0123456789`)
 )
 
 //uuid based on random numbers (RFC 4122)
@@ -43,6 +44,9 @@ func RandomChars(n int, alphabets ...byte) string {
 	return string(dest)
 }
 
+func RandomDigits(n int)  string{
+	return RandomChars(n,'0','1','2','3','4','5','6','7','8','9')
+}
 
 // SetVersion sets version bits.
 func setVersion(bs []byte, v byte) {
