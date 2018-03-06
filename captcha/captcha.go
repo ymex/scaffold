@@ -89,9 +89,21 @@ func Verify(id string, digits []byte) bool {
 // spaces and commas from the string, but any other characters, apart from
 // digits and listed above, will cause the function to return false.
 func VerifyString(id string, digits string) bool {
-	if len(digits) <=0 {
+
+	if digits == "" {
 		return false
 	}
-
-	return Verify(id, []byte(digits))
+	ns := make([]byte, len(digits))
+	for i := range ns {
+		d := digits[i]
+		switch {
+		case '0' <= d && d <= '9':
+			ns[i] = d - '0'
+		case d == ' ' || d == ',':
+			// ignore
+		default:
+			return false
+		}
+	}
+	return Verify(id, ns)
 }
