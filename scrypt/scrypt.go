@@ -16,6 +16,7 @@ import (
 	"time"
 
 	"golang.org/x/crypto/scrypt"
+	"crypto/md5"
 )
 
 // Constants
@@ -300,4 +301,12 @@ func Calibrate(timeout time.Duration, memMiBytes int, params Params) (Params, er
 	}
 
 	return p, p.Check()
+}
+
+//计算md5值
+func MD5(text string) string  {
+	md5ctx :=md5.New()
+	md5ctx.Write([]byte(text))
+	md5txts := md5ctx.Sum(nil)
+	return  hex.EncodeToString(md5txts)
 }
